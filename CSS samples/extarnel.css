@@ -1,0 +1,13 @@
+body {
+    background-color: rgb(250, 161, 255);
+}
+h1 {
+    text-align: center;
+    color: rgb(227, 36, 224); 
+    font-family: fantasy;
+}
+p {
+    font-family: fantasy;
+    text-align: center;
+    color: rgb(222, 51, 219);
+}
