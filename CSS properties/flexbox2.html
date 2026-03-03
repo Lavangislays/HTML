@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox Image Tutorial</title>
+
+    <!-- Internal CSS -->
+    <style>
+
+        /* ===============================
+           1️⃣ Basic Page Styling
+        ================================== */
+
+        body {
+            margin: 0; /* Remove default margin */
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+
+            display: flex;              /* Make body a flex container */
+            justify-content: center;    /* Center horizontally */
+            align-items: center;        /* Center vertically */
+            height: 100vh;              /* Full screen height */
+        }
+
+        /* ===============================
+           2️⃣ Main Container
+        ================================== */
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            width: 90%;
+            max-width: 1000px;
+            border-radius: 10px;
+            box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ===============================
+           3️⃣ Heading Styling
+        ================================== */
+
+        h1 {
+            text-align: center;
+        }
+
+        /* ===============================
+           4️⃣ Image Card Section (Flexbox)
+        ================================== */
+
+        .image-wrapper {
+            display: flex;          /* Activate Flexbox */
+            flex-direction: row;    /* Default: row */
+            justify-content: center; /* Horizontal alignment */
+            align-items: center;     /* Vertical alignment */
+            gap: 20px;               /* Space between items */
+            flex-wrap: wrap;         /* Allows wrapping on small screens */
+            margin-top: 20px;
+        }
+
+        /* ===============================
+           5️⃣ Individual Card
+        ================================== */
+
+        .card {
+            background-color: #fafafa;
+            width: 200px;
+            border-radius: 10px;
+            overflow: hidden; /* Prevent image overflow */
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+
+            display: flex;              /* Make card also flex */
+            flex-direction: column;     /* Stack image + text vertically */
+            align-items: center;        /* Center content horizontally */
+        }
+
+        /* ===============================
+           6️⃣ Image Styling
+        ================================== */
+
+        .card img {
+            width: 100%; /* Full width of card */
+            height: 150px;
+            object-fit: cover; /* Prevent image distortion */
+        }
+
+        /* ===============================
+           7️⃣ Text Styling
+        ================================== */
+
+        .card p {
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* ===============================
+           8️⃣ Hover Effect (Extra Fun)
+        ================================== */
+
+        .card:hover {
+            transform: scale(1.05);
+            transition: 0.3s;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>🌍 My Flexbox Image Gallery</h1>
+
+        <div class="image-wrapper">
+
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=1" alt="Random Image">
+                <p>Beautiful Nature</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=2" alt="Random Image">
+                <p>Mountain View</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=3" alt="Random Image">
+                <p>City Lights</p>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card">
+                <img src="https://picsum.photos/300/200?random=4" alt="Random Image">
+                <p>Ocean Breeze</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
