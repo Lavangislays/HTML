@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Advanced Bootstrap UI</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body data-bs-spy="scroll" data-bs-target="#nav">
+
+<!-- NAVBAR -->
+<nav id="nav" class="navbar navbar-expand-lg bg-body-tertiary bg-opacity-75 backdrop-blur sticky-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold">⚡ NeoUI</a>
+    <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#menu">
+      ☰
+    </button>
+
+    <div class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#pricing">Pricing</a></li>
+        <li class="nav-item"><button class="btn btn-warning ms-3" id="themeToggle">🌗</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- OFFCANVAS MENU -->
+<div class="offcanvas offcanvas-end" id="menu">
+  <div class="offcanvas-header">
+    <h5>Menu</h5>
+    <button class="btn-close" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <a href="#features" class="d-block mb-2">Features</a>
+    <a href="#pricing" class="d-block mb-2">Pricing</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="vh-100 d-flex align-items-center text-center bg-primary bg-gradient">
+  <div class="container">
+    <h1 class="display-2 fw-bold">Next-Level Bootstrap</h1>
+    <p class="lead">Feels like a modern SaaS app. Still zero CSS.</p>
+    <button class="btn btn-lg btn-light" data-bs-toggle="modal" data-bs-target="#demoModal">Launch</button>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">⚡ Features</h2>
+    <div class="row g-4">
+
+      <div class="col-md-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body">
+            <h5>Live Progress</h5>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-success" data-value="90"></div>
+            </div>
+            <div class="progress mb-2">
+              <div class="progress-bar bg-info" data-value="70"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body">
+            <h5>Tooltips</h5>
+            <button class="btn btn-warning" data-bs-toggle="tooltip" title="Bootstrap magic!">
+              Hover me
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow-lg h-100">
+          <div class="card-body">
+            <h5>AI Activity</h5>
+            <ul id="feed" class="list-group small"></ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-5 bg-body-tertiary">
+  <div class="container text-center">
+    <h2 class="mb-4">💰 Pricing</h2>
+
+    <div class="form-check form-switch d-flex justify-content-center mb-4">
+      <input class="form-check-input" type="checkbox" id="priceToggle">
+      <label class="form-check-label ms-2">Yearly Discount</label>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5>Starter</h5>
+            <h2 class="price" data-month="10" data-year="100">$10</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow border-warning border-3">
+          <div class="card-body">
+            <h5>Pro</h5>
+            <h2 class="price" data-month="25" data-year="250">$25</h2>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body">
+            <h5>Enterprise</h5>
+            <h2 class="price" data-month="50" data-year="500">$50</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FLOATING BUTTON -->
+<button class="btn btn-danger position-fixed bottom-0 end-0 m-4 rounded-circle p-3 shadow-lg"
+onclick="showToast()">🚀</button>
+
+<!-- TOAST -->
+<div class="position-fixed bottom-0 end-0 p-3">
+  <div id="toast" class="toast text-bg-primary">
+    <div class="toast-body">Action triggered!</div>
+  </div>
+</div>
+
+<!-- MODAL -->
+<div class="modal fade" id="demoModal">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <h3>🚀 Bootstrap is insane</h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// TOOLTIP INIT
+document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el => new bootstrap.Tooltip(el));
+
+// PROGRESS ANIMATION
+const bars = document.querySelectorAll('.progress-bar');
+window.addEventListener('scroll', () => {
+  bars.forEach(bar => {
+    let value = bar.getAttribute('data-value');
+    bar.style.width = value + "%";
+  });
+});
+
+// PRICING TOGGLE
+document.getElementById("priceToggle").addEventListener("change", e => {
+  document.querySelectorAll(".price").forEach(p => {
+    p.innerText = "$" + (e.target.checked ? p.dataset.year : p.dataset.month);
+  });
+});
+
+// THEME SWITCH
+document.getElementById("themeToggle").onclick = () => {
+  let html = document.documentElement;
+  html.setAttribute("data-bs-theme", html.getAttribute("data-bs-theme") === "dark" ? "light" : "dark");
+};
+
+// TOAST
+function showToast(){
+  new bootstrap.Toast(document.getElementById('toast')).show();
+}
+
+// FAKE AI FEED
+const feed = document.getElementById("feed");
+const messages = ["Analyzing data...", "User signed up", "Server optimized", "AI generated report"];
+setInterval(() => {
+  let li = document.createElement("li");
+  li.className = "list-group-item";
+  li.innerText = messages[Math.floor(Math.random()*messages.length)];
+  feed.prepend(li);
+  if(feed.children.length > 5) feed.removeChild(feed.lastChild);
+}, 2000);
+
+</script>
+
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,41 @@
+.indianHeading {
+    display: flex;
+    padding: 10px;
+    border: 2px solid blue;  
+    background-color: antiquewhite;
+    border-radius: 30px;
+}
+.transparent {
+    width: 400px;
+    padding: 10px;
+    border-radius: 30px;
+}
+#description {
+    background-color: rgb(200, 158, 158);
+    border-radius: 10px;
+    padding: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+img {
+    width: 400px;
+    border-radius: 30px;
+    padding: 10px;
+}
+.Bengali {
+ display: flex;
+ background-color: antiquewhite;
+ border-radius: 30px;
+ padding: 10px;
+ border: 2px solid blue;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.Gujarati {
+   
+ background-color: antiquewhite;
+ border-radius: 30px;
+ padding: 10px;
+ border: 2px solid blue;
+ text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}

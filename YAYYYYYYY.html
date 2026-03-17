@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranger Things - Complete Fan Encyclopedia</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<style>
+/* --- GENERAL STYLES --- */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: #f5f5f5;
+  background: #0b0b0b;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- NAVIGATION --- */
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+nav a {
+  margin: 0 20px;
+  font-weight: 500;
+  color: #ff0000;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  text-shadow: 0 0 10px #ff0000;
+}
+
+/* --- HERO --- */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(to bottom, #000 50%, #1a0000);
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 5rem;
+  color: #ff0000;
+  text-shadow: 0 0 25px #ff0000;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+/* --- SECTIONS --- */
+section {
+  padding: 80px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+section h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  color: #ff0000;
+  text-align: center;
+  margin-bottom: 40px;
+  text-shadow: 0 0 15px #ff0000;
+}
+
+/* --- INFO GRID --- */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.card {
+  background: #111;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255,0,0,0.4);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(255,0,0,0.6);
+}
+
+.card h3 {
+  font-family: 'Cinzel', serif;
+  margin-bottom: 10px;
+  color: #ff4d4d;
+}
+
+img.character-img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+  text-align: center;
+  padding: 30px 20px;
+  background: #000;
+  color: #777;
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width:768px){
+  header h1 { font-size: 3.5rem; }
+  nav a { margin: 0 10px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#hero">Home</a>
+  <a href="#overview">Overview</a>
+  <a href="#characters">Characters</a>
+  <a href="#actors">Actors</a>
+  <a href="#seasons">Seasons</a>
+  <a href="#upsidedown">Upside Down</a>
+</nav>
+
+<!-- HERO -->
+<header id="hero">
+  <h1>STRANGER THINGS</h1>
+  <p>The complete fan encyclopedia: Characters, Actors, Seasons, and the Upside Down</p>
+</header>
+
+<!-- OVERVIEW -->
+<section id="overview">
+  <h2>Overview</h2>
+  <p>
+    <strong>Stranger Things</strong> is a sci-fi horror series created by the <strong>Duffer Brothers</strong>, premiering on <strong>Netflix</strong> in 2016.  
+    Set in Hawkins, Indiana in the 1980s, the story follows a group of kids investigating mysterious events, including the disappearance of Will Byers and the appearance of Eleven, a girl with psychic abilities.  
+    The series explores friendship, trauma, government conspiracies, and supernatural dimensions, blending 80s nostalgia with horror, suspense, and adventure.
+  </p>
+</section>
+
+<!-- CHARACTERS -->
+<section id="characters">
+  <h2>Characters</h2>
+  <div class="info-grid">
+    <!-- Core Characters -->
+    <div class="card"><h3>Eleven / Jane Hopper</h3><p>Millie Bobby Brown. Psychic girl escaping Hawkins Lab; central to fighting the Upside Down.</p></div>
+    <div class="card"><h3>Mike Wheeler</h3><p>Finn Wolfhard. Leader of the friend group; close bond with Eleven.</p></div>
+    <div class="card"><h3>Lucas Sinclair</h3><p>Caleb McLaughlin. Tactical, brave, protective.</p></div>
+    <div class="card"><h3>Dustin Henderson</h3><p>Gaten Matarazzo. Science enthusiast and comic relief.</p></div>
+    <div class="card"><h3>Will Byers</h3><p>Noah Schnapp. Disappeared in S1, often possessed by the Mind Flayer.</p></div>
+    <div class="card"><h3>Max Mayfield</h3><p>Sadie Sink. Brave new friend, skateboarder, struggles with family and trauma.</p></div>
+    <div class="card"><h3>Nancy Wheeler</h3><p>Natalia Dyer. Mike’s older sister, strong-willed and investigative.</p></div>
+    <div class="card"><h3>Jonathan Byers</h3><p>Charlie Heaton. Will’s protective older brother.</p></div>
+    <div class="card"><h3>Steve Harrington</h3><p>Joe Keery. Popular teen turned protector; mentor to Dustin & friends.</p></div>
+    <div class="card"><h3>Robin Buckley</h3><p>Maya Hawke. Intelligent ally introduced in S3; helps decode Russian secrets.</p></div>
+    <div class="card"><h3>Erica Sinclair</h3><p>Priah Ferguson. Lucas’s assertive little sister; helps in battles against the Upside Down.</p></div>
+    <div class="card"><h3>Jim Hopper</h3><p>David Harbour. Hawkins police chief, guardian figure for Eleven.</p></div>
+    <div class="card"><h3>Joyce Byers</h3><p>Winona Ryder. Mother of Will and Jonathan; determined, fearless.</p></div>
+    <div class="card"><h3>Martin Brenner</h3><p>Matthew Modine. Head of Hawkins Lab; experiments with children, including Eleven.</p></div>
+    <div class="card"><h3>Murray Bauman</h3><p>Brett Gelman. Conspiracy theorist; helps uncover government secrets.</p></div>
+    <div class="card"><h3>Sam Owens</h3><p>Paul Reiser. Government scientist; works with Hopper & the kids to contain threats.</p></div>
+    <div class="card"><h3>Vecna / Henry Creel</h3><p>Jamie Campbell Bower. Main villain from S4–S5; former Hawkins Lab test subject turned deadly force.</p></div>
+    <div class="card"><h3>Billy Hargrove</h3><p>Dacre Montgomery. Max’s volatile stepbrother; becomes Mind Flayer host.</p></div>
+    <div class="card"><h3>Victor Creel</h3><p>Robert Englund. Introduced in S4; terrifying backstory linked to Upside Down.</p></div>
+    <!-- Supporting Characters -->
+    <div class="card"><h3>Karen Wheeler</h3><p>Cara Buono. Mother of Mike and Nancy.</p></div>
+    <div class="card"><h3>Bob Newby</h3><p>Sean Astin. Joyce’s boyfriend in S2.</p></div>
+    <div class="card"><h3>Argyle</h3><p>Eduardo Franco. Jonathan’s friend in S4.</p></div>
+    <div class="card"><h3>Alexei</h3><p>Alec Utgoff. Russian scientist, lovable ally in S3.</p></div>
+    <div class="card"><h3>Claudia Henderson</h3><p>Catherine Curtin. Dustin’s mom.</p></div>
+    <div class="card"><h3>Mr. Clarke</h3><p>Randy Havens. Hawkins school teacher who helps the kids.</p></div>
+    <div class="card"><h3>Heather Holloway</h3><p>Francesca Reale. Victim in S4 subplot.</p></div>
+    <div class="card"><h3>Lieutenant Detective Hanson</h3><p>John Reynolds. Police ally in S1.</p></div>
+    <div class="card"><h3>Father Owens</h3><p>Will Chase. Church figure tied to government secrets.</p></div>
+    <div class="card"><h3>Chrissy Cunningham</h3><p>Grace Van Dien. Cheerleader with tragic arc in S4.</p></div>
+    <!-- You can continue adding every minor recurring actor similarly -->
+  </div>
+</section>
+
+<!-- ACTORS -->
+<section id="actors">
+  <h2>Actors</h2>
+  <div class="info-grid">
+    <div class="card"><h3>Millie Bobby Brown</h3><p>Plays Eleven / Jane Hopper.</p></div>
+    <div class="card"><h3>Finn Wolfhard</h3><p>Plays Mike Wheeler.</p></div>
+    <div class="card"><h3>Caleb McLaughlin</h3><p>Plays Lucas Sinclair.</p></div>
+    <div class="card"><h3>Gaten Matarazzo</h3><p>Plays Dustin Henderson.</p></div>
+    <div class="card"><h3>Noah Schnapp</h3><p>Plays Will Byers.</p></div>
+    <div class="card"><h3>Sadie Sink</h3><p>Plays Max Mayfield.</p></div>
+    <div class="card"><h3>Natalia Dyer</h3><p>Plays Nancy Wheeler.</p></div>
+    <div class="card"><h3>Charlie Heaton</h3><p>Plays Jonathan Byers.</p></div>
+    <div class="card"><h3>Joe Keery</h3><p>Plays Steve Harrington.</p></div>
+    <div class="card"><h3>Maya Hawke</h3><p>Plays Robin Buckley.</p></div>
+    <div class="card"><h3>Priah Ferguson</h3><p>Plays Erica Sinclair.</p></div>
+    <div class="card"><h3>David Harbour</h3><p>Plays Jim Hopper.</p></div>
+    <div class="card"><h3>Winona Ryder</h3><p>Plays Joyce Byers.</p></div>
+    <div class="card"><h3>Matthew Modine</h3><p>Plays Martin Brenner.</p></div>
+    <div class="card"><h3>Brett Gelman</h3><p>Plays Murray Bauman.</p></div>
+    <div class="card"><h3>Paul Reiser</h3><p>Plays Sam Owens.</p></div>
+    <div class="card"><h3>Jamie Campbell Bower</h3><p>Plays Vecna / Henry Creel.</p></div>
+    <div class="card"><h3>Dacre Montgomery</h3><p>Plays Billy Hargrove.</p></div>
+    <div class="card"><h3>Robert Englund</h3><p>Plays Victor Creel.</p></div>
+  </div>
+</section>
+
+<!-- SEASONS -->
+<section id="seasons">
+  <h2>Seasons</h2>
+  <div class="info-grid">
+    <div class="card"><h3>Season 1 (2016)</h3><p>Will Byers disappears; Eleven appears; first breach into the Upside Down.</p></div>
+    <div class="card"><h3>Season 2 (2017)</h3><p>The Mind Flayer emerges; Will is possessed; the group tries to close the portal.</p></div>
+    <div class="card"><h3>Season 3 (2019)</h3><p>Russian secret base opens; Mind Flayer manifests physically; Starcourt Mall battle.</p></div>
+    <div class="card"><h3>Season 4 (2022)</h3><p>Vecna is revealed; multiple breaches to the Upside Down; Hawkins faces its darkest hour.</p></div>
+    <div class="card"><h3>Season 5 (Upcoming)</h3><p>The final season, expected to wrap up the Hawkins story and the Upside Down.</p></div>
+  </div>
+</section>
+
+<!-- UPSIDE DOWN -->
+<section id="upsidedown">
+  <h2>The Upside Down</h2>
+  <p>
+    A parallel dark dimension mirroring Hawkins, inhabited by deadly creatures like the Demogorgon and Vecna.  
+    Features ash-like spores, twisted vines, and an eerie atmosphere. Accessed through interdimensional breaches, usually linked to Hawkins Lab experiments.
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>Stranger Things Fan Encyclopedia | Not affiliated with Netflix | Data from Wikipedia, IMDb, and Stranger Things Wiki</p>
+</footer>
+
+<script>
+  // Scroll animation using GSAP
+  gsap.from("header h1",{duration:2,opacity:0,y:-50});
+  gsap.from("header p",{duration:2,opacity:0,delay:0.5,y:30});
+  gsap.utils.toArray("section").forEach(sec=>{
+    gsap.from(sec,{scrollTrigger:{trigger:sec, start:"top 80%"},opacity:0,y:50,duration:1});
+  });
+</script>
+
+</body>
+</html>

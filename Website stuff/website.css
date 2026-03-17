@@ -1,0 +1,24 @@
+.image-container {
+    position: relative; /* This is crucial: the absolute position of the text is relative to this container */
+    display: inline-block; /* Helps contain the image correctly */
+    width: 100%; /* Adjust width as needed */
+}
+
+.image-container img {
+    display: block;
+    width: 100%; /* Makes image responsive within its container */
+    height: auto;
+}
+
+.image-text {
+    position: absolute; /* Positions the text over the image */
+    top: 50%; /* Starts the text placement at 50% from the top */
+    left: 50%; /* Starts the text placement at 50% from the left */
+    transform: translate(-50%, -50%); /* Centers the text perfectly within the image */
+    color: white; /* Choose a text color that contrasts well with the image */
+    font-size: 24px; /* Adjust text size */
+    text-align: center;
+    /* Optional: add a background or shadow for better readability */
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    /* padding: 10px; */
+}
