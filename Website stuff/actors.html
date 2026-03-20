@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actors</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            color: white;
+            background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Overlay */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 50px;
+            font-size: 72px;
+            color: white;
+            text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+            animation: glowFlicker 2.5s infinite;
+        }
+
+        @keyframes glowFlicker {
+            0%, 19%, 21%, 50%, 52%, 100% { 
+                text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+            }
+            20%, 51% { 
+                text-shadow: 0 0 12px red, 0 0 20px darkred, 0 0 28px red, 0 0 36px darkred;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 50px auto;
+            font-size: 22px;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 0 0 4px red, 0 0 8px darkred;
+        }
+
+        /* Actor cards layout */
+        .actor-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .actor-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        .actor-img {
+            width: 180px;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 0 15px white, 0 0 30px white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .actor-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px white, 0 0 40px white;
+        }
+
+        .actor-name {
+            font-size: 18px;
+            margin-top: 10px;
+            text-align: center;
+            color: white;
+            text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+            animation: glowFlicker 2.5s infinite;
+        }
+
+        /* Responsive: stack vertically on small screens */
+        @media (max-width: 600px) {
+            .actor-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .spacer {
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Actors</h1>
+
+    <div class="content">
+        <div class="actor-container">
+            <!-- Stranger Things cast -->
+            <div class="actor-card">
+                <img class="actor-img" src="https://thecelebjackets.com/wp-content/uploads/2026/01/Finn-Wolfhard-Stranger-Things-5-The-Finale-Fan-Screening-Jacket.webp" alt="Finn Wolfhard">
+                <div class="actor-name">Finn Wolfhard as "Mike"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://s.yimg.com/ny/api/res/1.2/wC7W_zu5Kij57nN9rpiSag--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD0xNzM4O2NmPXdlYnA-/https://media.zenfs.com/en/us_magazine_896/bfc34691fb818a6c83f36f45c27523d6" alt="Millie Bobby Brown">
+                <div class="actor-name">Millie Bobby Brown as "Eleven"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Gaten_Matarazzo_2017.jpg" alt="Gaten Matarazzo">
+                <div class="actor-name">Gaten Matarazzo as "Dustin"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Caleb_McLaughlin_by_Gage_Skidmore_2.jpg" alt="Caleb McLaughlin">
+                <div class="actor-name">Caleb McLaughlin as "Lucas"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Noah_Schnapp_%28cropped%29.jpg" alt="Noah Schnapp">
+                <div class="actor-name">Noah Schnapp as "Will"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Sadie_Sink_by_Gage_Skidmore.jpg" alt="Sadie Sink">
+                <div class="actor-name">Sadie Sink as "Max"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Natasha_Lyonne_by_Gage_Skidmore.jpg" alt="Natalia Dyer">
+                <div class="actor-name">Natalia Dyer as "Nancy"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Charlie_Heaton_by_Gage_Skidmore.jpg" alt="Charlie Heaton">
+                <div class="actor-name">Charlie Heaton as "Jonathan"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/4/43/Priah-Folland-Stranger-Things-2019.png" alt="Joe Keery">
+                <div class="actor-name">Joe Keery as "Steve"</div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+    </div>
+</body>
+</html>

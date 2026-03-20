@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stranger Things</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    background: black;
+    overflow: hidden;
+}
+
+.container {
+    position: relative;
+    height: 100vh;
+}
+
+/* BACKGROUND IMAGE */
+.container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(40%) contrast(110%);
+}
+
+/* CINEMATIC VIGNETTE */
+.overlay {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255,0,0,0.1) 50%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+    pointer-events: none; /* allows button clicks */
+}
+
+/* TITLE WITH RED PULSE */
+.title {
+    position: absolute;
+    top: 20%;
+    width: 100%;
+    text-align: center;
+    color: red;
+    font-size: 70px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 10px red, 0 0 20px red, 0 0 40px darkred;
+    animation: flicker 2s infinite, pulseRed 3s infinite;
+    z-index: 3;
+}
+
+@keyframes flicker {
+    0%,18%,22%,25%,53%,57%,100% {opacity:1;}
+    20%,24%,55% {opacity:0.4;}
+}
+
+@keyframes pulseRed {
+    0%,100% { text-shadow: 0 0 10px red,0 0 20px red,0 0 40px darkred; }
+    50% { text-shadow: 0 0 30px red,0 0 60px red,0 0 80px darkred; }
+}
+
+/* ENTER BUTTON */
+.enter-btn {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px 40px;
+    font-size: 20px;
+    color: white;
+    border: 2px solid red;
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: 0.3s;
+    z-index: 5; /* above fog & overlay */
+}
+
+.enter-btn:hover {
+    background: red;
+    box-shadow: 0 0 20px red, 0 0 40px red;
+}
+
+/* FADE-IN */
+.fade-in {opacity:0; animation:fadeIn 3s forwards;}
+@keyframes fadeIn {to{opacity:1;}}
+
+/* 🌫 MULTIPLE FOG LAYERS */
+.fog {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
+    pointer-events: none; /* allows button clicks */
+    z-index: 2;
+    opacity: 0.5;
+}
+
+.fog.left { left: -300px; animation: driftLeft 25s infinite linear, fogPulse 8s infinite ease-in-out; }
+.fog.right { right: -300px; animation: driftRight 28s infinite linear, fogPulse 10s infinite ease-in-out; }
+.fog.middle { left: 30%; width: 40%; background: radial-gradient(circle, rgba(255,255,255,0.02), transparent 90%); animation: driftMiddle 40s infinite linear, fogPulse 12s infinite ease-in-out; }
+
+@keyframes driftLeft { 0%{transform:translateX(0);} 50%{transform:translateX(350px);} 100%{transform:translateX(0);} }
+@keyframes driftRight { 0%{transform:translateX(0);} 50%{transform:translateX(-350px);} 100%{transform:translateX(0);} }
+@keyframes driftMiddle { 0%{transform:translateX(0);} 50%{transform:translateX(50px);} 100%{transform:translateX(0);} }
+@keyframes fogPulse { 0%,100% {opacity:0.5;} 50% {opacity:0.2;} }
+
+/* ⚡ RANDOM LIGHTNING FLASH */
+.lightning {
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(255,255,255,0);
+    z-index:4;
+    pointer-events: none; /* allows button clicks */
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<img src="https://images.wallpapersden.com/image/download/stranger-things-hd-netflix-experience_bWlla2mUmZqaraWkpJRmbmdlrWZlbWU.jpg">
+
+<div class="overlay"></div>
+
+<!-- MULTIPLE FOG LAYERS -->
+<div class="fog left"></div>
+<div class="fog right"></div>
+<div class="fog middle"></div>
+
+<div class="title fade-in">STRANGER THINGS</div>
+
+<button class="enter-btn fade-in" onclick="enterSite()">Enter the Upside Down</button>
+
+<!-- LIGHTNING -->
+<div class="lightning" id="lightning"></div>
+
+</div>
+
+<script>
+function enterSite(){
+    document.body.style.transition="1s";
+    document.body.style.opacity="0";
+    setTimeout(()=>{window.location.href="info.html";},1000);
+}
+
+// subtle flicker for background
+setInterval(()=>{document.body.style.backgroundColor=Math.random()>0.95?"#200":"black";},100);
+
+// random lightning flashes
+const lightning=document.getElementById("lightning");
+setInterval(()=>{
+    if(Math.random()>0.97){
+        lightning.style.background="rgba(255,255,255,0.3)";
+        setTimeout(()=>{lightning.style.background="rgba(255,255,255,0)";},100);
+    }
+},300);
+</script>
+
+</body>
+</html>

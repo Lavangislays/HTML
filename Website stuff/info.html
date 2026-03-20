@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Stranger Things Info</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            color: white;
+
+            background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(0,0,0,0.3);
+            background-blend-mode: multiply;
+            overflow-x: hidden;
+        }
+
+        /* Dark vignette effect */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            background: radial-gradient(circle at center,
+                        rgba(0,0,0,0) 40%,
+                        rgba(0,0,0,0.4) 70%,
+                        rgba(0,0,0,0.85) 100%);
+        }
+
+        /* Navbar */
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: rgba(0,0,0,0.8);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            opacity: 0.95;
+            height: 60px;
+            line-height: 60px;
+            z-index: 3;
+            backdrop-filter: blur(4px);
+        }
+
+        li { float: left; }
+
+        li a {
+            display: block;
+            color: red;
+            padding: 0 20px;
+            text-decoration: none;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            letter-spacing: 1.5px;
+            text-shadow: 0 0 4px red, 0 0 8px darkred;
+            transition: 0.3s all;
+        }
+
+        li a:hover {
+            background-color: darkred;
+            transform: scale(1.05);
+        }
+
+        /* Flicker animation */
+        @keyframes glowFlicker {
+            0%, 19%, 21%, 50%, 52%, 100% { 
+                text-shadow: 0 0 4px red, 0 0 8px darkred; 
+            }
+            20%, 51% { 
+                text-shadow: 0 0 12px red, 0 0 20px darkred; 
+            }
+        }
+
+        h1 {
+            font-size: 52px;
+            text-align: center;
+            margin-top: 80px;
+            color: white;
+            animation: glowFlicker 2s infinite;
+            position: relative;
+            z-index: 3;
+        }
+
+        p {
+            text-align: center;
+            font-size: 22px;
+            margin: 20px 30px;
+            color: white;
+            text-shadow: 0 0 4px red, 0 0 8px darkred;
+            animation: glowFlicker 3s infinite;
+            transition: 0.5s all;
+            position: relative;
+            z-index: 3;
+        }
+
+        p:hover {
+            transform: scale(1.02);
+            text-shadow: 0 0 10px red, 0 0 20px darkred;
+        }
+
+        .content {
+            padding-top: 80px;
+            text-align: center;
+            position: relative;
+            z-index: 3;
+        }
+
+    </style>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<ul>
+    <li><a href="#">Home</a></li>
+    <li><a href="http://127.0.0.1:3000/Website%20stuff/actors.html?serverWindowId=382df5bc-55d8-41a7-a174-719c06e43f43">Actors</a></li>
+    <li><a href="http://127.0.0.1:3000/Website%20stuff/episodes.html?serverWindowId=382df5bc-55d8-41a7-a174-719c06e43f43">Episodes</a></li>
+    <li><a href="http://127.0.0.1:3000/Website%20stuff/infotab.html?serverWindowId=382df5bc-55d8-41a7-a174-719c06e43f43">Info</a></li>
+    <li><a href="http://127.0.0.1:3000/Website%20stuff/more.html?serverWindowId=382df5bc-55d8-41a7-a174-719c06e43f43">More</a></li>
+</ul>
+
+<h1>Stranger Things</h1>
+
+<div class="content">
+    <p>Welcome! Click on any of the buttons to learn about the awesome TV show called Stranger Things — hope you enjoy!</p>
+    <p>Regards — Lavangi Singhal</p>
+</div>
+
+</body>
+</html>
