@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Episodes</title>
+
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Cinzel', serif;
+            color: white;
+            background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        h1 {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-top: 100px;
+            font-size: 72px;
+            color: white;
+            text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+            animation: glowFlicker 2.5s infinite;
+        }
+
+        @keyframes glowFlicker {
+            0%, 19%, 21%, 50%, 52%, 100% { 
+                text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+            }
+            20%, 51% { 
+                text-shadow: 0 0 12px red, 0 0 20px darkred, 0 0 28px red, 0 0 36px darkred;
+            }
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 50px auto;
+            font-size: 22px;
+            line-height: 1.6;
+            text-align: center;
+            text-shadow: 0 0 4px red, 0 0 8px darkred;
+        }
+
+        .episode-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .episode-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .episode-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px white, 0 0 40px white;
+        }
+
+        .episode-title {
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 4px red, 0 0 8px darkred;
+        }
+
+        .episode-desc {
+            font-size: 14px;
+            text-shadow: 0 0 3px red;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 50px;
+            text-shadow: 0 0 8px red;
+        }
+
+        @media screen and (max-width: 600px) {
+            .episode-card {
+                width: 200px;
+            }
+            h1 {
+                font-size: 48px;
+            }
+        }
+
+        .spacer {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Episodes</h1>
+
+<div class="content">
+
+    <!-- SEASON 1 -->
+    <h2>Season 1</h2>
+    <div class="episode-container">
+        <div class="episode-card"><div class="episode-title">E1: The Vanishing of Will Byers</div></div>
+        <div class="episode-card"><div class="episode-title">E2: The Weirdo on Maple Street</div></div>
+        <div class="episode-card"><div class="episode-title">E3: Holly, Jolly</div></div>
+        <div class="episode-card"><div class="episode-title">E4: The Body</div></div>
+        <div class="episode-card"><div class="episode-title">E5: The Flea and the Acrobat</div></div>
+        <div class="episode-card"><div class="episode-title">E6: The Monster</div></div>
+        <div class="episode-card"><div class="episode-title">E7: The Bathtub</div></div>
+        <div class="episode-card"><div class="episode-title">E8: The Upside Down</div></div>
+    </div>
+
+    <!-- SEASON 2 -->
+    <h2>Season 2</h2>
+    <div class="episode-container">
+        <div class="episode-card"><div class="episode-title">E1: MADMAX</div></div>
+        <div class="episode-card"><div class="episode-title">E2: Trick or Treat, Freak</div></div>
+        <div class="episode-card"><div class="episode-title">E3: The Pollywog</div></div>
+        <div class="episode-card"><div class="episode-title">E4: Will the Wise</div></div>
+        <div class="episode-card"><div class="episode-title">E5: Dig Dug</div></div>
+        <div class="episode-card"><div class="episode-title">E6: The Spy</div></div>
+        <div class="episode-card"><div class="episode-title">E7: The Lost Sister</div></div>
+        <div class="episode-card"><div class="episode-title">E8: The Mind Flayer</div></div>
+        <div class="episode-card"><div class="episode-title">E9: The Gate</div></div>
+    </div>
+
+    <!-- SEASON 3 -->
+    <h2>Season 3</h2>
+    <div class="episode-container">
+        <div class="episode-card"><div class="episode-title">E1: Suzie, Do You Copy?</div></div>
+        <div class="episode-card"><div class="episode-title">E2: The Mall Rats</div></div>
+        <div class="episode-card"><div class="episode-title">E3: The Case of the Missing Lifeguard</div></div>
+        <div class="episode-card"><div class="episode-title">E4: The Sauna Test</div></div>
+        <div class="episode-card"><div class="episode-title">E5: The Flayed</div></div>
+        <div class="episode-card"><div class="episode-title">E6: E Pluribus Unum</div></div>
+        <div class="episode-card"><div class="episode-title">E7: The Bite</div></div>
+        <div class="episode-card"><div class="episode-title">E8: The Battle of Starcourt</div></div>
+    </div>
+
+    <!-- SEASON 4 -->
+    <h2>Season 4</h2>
+    <div class="episode-container">
+        <div class="episode-card"><div class="episode-title">E1: The Hellfire Club</div></div>
+        <div class="episode-card"><div class="episode-title">E2: Vecna’s Curse</div></div>
+        <div class="episode-card"><div class="episode-title">E3: The Monster and the Superhero</div></div>
+        <div class="episode-card"><div class="episode-title">E4: Dear Billy</div></div>
+        <div class="episode-card"><div class="episode-title">E5: The Nina Project</div></div>
+        <div class="episode-card"><div class="episode-title">E6: The Dive</div></div>
+        <div class="episode-card"><div class="episode-title">E7: The Massacre at Hawkins Lab</div></div>
+        <div class="episode-card"><div class="episode-title">E8: Papa</div></div>
+        <div class="episode-card"><div class="episode-title">E9: The Piggyback</div></div>
+    </div>
+
+    <!-- SEASON 5 -->
+    <h2>Season 5</h2>
+    <div class="episode-container">
+
+        <div class="episode-card">
+            <div class="episode-title">E1: The Crawl</div>
+            <div class="episode-desc">The final chapter begins as Hawkins faces its greatest threat yet.</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E2 : The Vanishing Of Holly Wheeler</div>
+            <div class="episode-desc">After a vicious attack at the Wheeler home, Mike and Nancy confront the cost of secrecy, while El and Hopper embark on a rescue mission.</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E3: The Turnbow Trap</div>
+            <div class="episode-desc">Will gains unique insight into Vecna's next move, giving the crew an opportunity to set a trap; Holly explores her new surroundings.</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E4: Sorcerer</div>
+            <div class="episode-desc">The military tighten their grip on the town as Mike, Lucas and Robin orchestrate a daring escape; El confronts the enemy face to face.</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E5: Shock Jock</div>
+            <div class="episode-desc">Details coming soon...</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E6: Episode 6 (TBA)</div>
+            <div class="episode-desc">Details coming soon...</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E7: Episode 7 (TBA)</div>
+            <div class="episode-desc">Details coming soon...</div>
+        </div>
+        <div class="episode-card">
+            <div class="episode-title">E8: Episode 8 (TBA)</div>
+            <div class="episode-desc">Details coming soon...</div>
+        </div>
+
+    </div>
+
+    <div class="spacer"></div>
+</div>
+
+</body>
+</html>

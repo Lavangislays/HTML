@@ -21,7 +21,6 @@
             position: relative;
         }
 
-        /* Overlay */
         body::before {
             content: "";
             position: fixed;
@@ -36,7 +35,7 @@
             position: relative;
             z-index: 1;
             text-align: center;
-            margin-top: 50px;
+            margin-top: 100px;
             font-size: 72px;
             color: white;
             text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
@@ -63,12 +62,11 @@
             text-shadow: 0 0 4px red, 0 0 8px darkred;
         }
 
-        /* Actor cards layout */
         .actor-container {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 40px;
+            gap: 25px;
             margin-top: 50px;
         }
 
@@ -76,26 +74,31 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            width: 180px;
-            flex-shrink: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 10px;
+            min-width: 150px;
+            max-width: 180px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .actor-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px white, 0 0 40px white;
         }
 
         .actor-img {
-            width: 180px;
-            height: 270px;
+            width: 150px;
+            height: 225px;
             object-fit: cover;
             border-radius: 10px;
             box-shadow: 0 0 15px white, 0 0 30px white;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .actor-img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px white, 0 0 40px white;
-        }
-
         .actor-name {
             font-size: 18px;
+            max-width: 150px;
             margin-top: 10px;
             text-align: center;
             color: white;
@@ -103,16 +106,22 @@
             animation: glowFlicker 2.5s infinite;
         }
 
-        /* Responsive: stack vertically on small screens */
-        @media (max-width: 600px) {
-            .actor-container {
-                flex-direction: column;
-                align-items: center;
+        @media screen and (max-width: 600px) {
+            .actor-card {
+                min-width: 120px;
+                max-width: 140px;
+            }
+            .actor-img {
+                width: 120px;
+                height: 180px;
+            }
+            h1 {
+                font-size: 48px;
             }
         }
 
         .spacer {
-            height: 200px;
+            height: 100px;
         }
     </style>
 </head>
@@ -121,7 +130,7 @@
 
     <div class="content">
         <div class="actor-container">
-            <!-- Stranger Things cast -->
+            <!-- Main Cast -->
             <div class="actor-card">
                 <img class="actor-img" src="https://thecelebjackets.com/wp-content/uploads/2026/01/Finn-Wolfhard-Stranger-Things-5-The-Finale-Fan-Screening-Jacket.webp" alt="Finn Wolfhard">
                 <div class="actor-name">Finn Wolfhard as "Mike"</div>
@@ -133,39 +142,178 @@
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/8/84/Gaten_Matarazzo_2017.jpg" alt="Gaten Matarazzo">
+                <img class="actor-img" src="https://hips.hearstapps.com/hmg-prod/images/gaten-matarazzo-attends-the-los-angeles-premiere-of-news-photo-1763666056.pjpeg?crop=0.803xw:0.574xh;0.122xw,0.0583xh" alt="Gaten Matarazzo">
                 <div class="actor-name">Gaten Matarazzo as "Dustin"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Caleb_McLaughlin_by_Gage_Skidmore_2.jpg" alt="Caleb McLaughlin">
+                <img class="actor-img" src="https://i.redd.it/caleb-mclaughlin-at-the-premiere-of-stranger-things-season-v0-25ymhvl4przf1.jpg?width=1898&format=pjpg&auto=webp&s=2dc1959f93e13f486b2905e54c3a24d65ae197ec" alt="Caleb McLaughlin">
                 <div class="actor-name">Caleb McLaughlin as "Lucas"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/3/33/Noah_Schnapp_%28cropped%29.jpg" alt="Noah Schnapp">
+                <img class="actor-img" src="https://rain-mag.com/uploads/webp/CELINE_VIP_22042025_NOAH-SCHNAPP_01-1745435079548.webp" alt="Noah Schnapp">
                 <div class="actor-name">Noah Schnapp as "Will"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Sadie_Sink_by_Gage_Skidmore.jpg" alt="Sadie Sink">
+                <img class="actor-img" src="https://s.yimg.com/ny/api/res/1.2/XXSnBRI_sYb5OcLUMAFmkQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTk2MDtoPTEyNDI7Y2Y9d2VicA--/https://media.zenfs.com/en/wwd_409/bfdacbccf4ffdf65d70bea4fb3f63c11" alt="Sadie Sink">
                 <div class="actor-name">Sadie Sink as "Max"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Natasha_Lyonne_by_Gage_Skidmore.jpg" alt="Natalia Dyer">
+                <img class="actor-img" src="https://s.yimg.com/ny/api/res/1.2/mZjnBC0KY6H6AFz5JEbeoQ--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD0xNTUzO2NmPXdlYnA-/https://media.zenfs.com/en/globe_458/8bdbdff83000aeb45ec8062c3c3da180" alt="Natalia Dyer">
                 <div class="actor-name">Natalia Dyer as "Nancy"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Charlie_Heaton_by_Gage_Skidmore.jpg" alt="Charlie Heaton">
+                <img class="actor-img" src="https://www.redcarpet-fashionawards.com/wp-content/uploads/2025/11/CHARLIE_HEATON_11-07-25.jpg" alt="Charlie Heaton">
                 <div class="actor-name">Charlie Heaton as "Jonathan"</div>
             </div>
 
             <div class="actor-card">
-                <img class="actor-img" src="https://upload.wikimedia.org/wikipedia/commons/4/43/Priah-Folland-Stranger-Things-2019.png" alt="Joe Keery">
+                <img class="actor-img" src="https://static.gofugyourself.com/uploads/2025/11/GettyImages-2245425042-1762489649-657x900.jpg" alt="Joe Keery">
                 <div class="actor-name">Joe Keery as "Steve"</div>
             </div>
+
+            <!-- More Actors -->
+            <div class="actor-card">
+                <img class="actor-img" src="https://deadline.com/wp-content/uploads/2025/11/P102ZKBM.jpg?w=800" alt="Winona Ryder">
+                <div class="actor-name">Winona Ryder as "Joyce Byers"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://hips.hearstapps.com/hmg-prod/images/gettyimages-2245426229-690dea122d446.jpg?resize=980:*" alt="David Harbour">
+                <div class="actor-name">David Harbour as "Jim Hopper"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://cdn.i-scmp.com/sites/default/files/styles/768x768/public/d8/images/canvas/2025/12/01/cad7f6e2-3ec1-45a8-a9c3-69a46a0f0156_d64b0e47.jpg?itok=_Db3HJUZ&v=1764582063" alt="Cara Buono">
+                <div class="actor-name">Cara Buono as "Karen Wheeler"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://c8.alamy.com/comp/2JACTRB/brett-gelman-058-attend-the-premiere-of-netflixs-stranger-things-season-3-on-june-28-2019-in-santa-monica-california-2JACTRB.jpg" alt="Brett Gelman">
+                <div class="actor-name">Brett Gelman as "Murray Bauman"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://s.yimg.com/ny/api/res/1.2/5Sf2pU138PqcS0vrBngA7A--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD0xNzYyO2NmPXdlYnA-/https://media.zenfs.com/en/globe_458/e9dee940f9d168a6e302222f84d8fbf9" alt="Maya Hawk">
+                <div class="actor-name">Maya Hawk as "Robin Buckley"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://imgix.bustle.com/uploads/getty/2022/5/23/5514792d-d846-429b-bca5-a48fa5d23e21-getty-1397284641.jpg" alt="Belle Henry">
+                <div class="actor-name">Amybeth McNulty as "Vickie"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://assets.vogue.com/photos/690dc87c34486a01f520d296/master/w_1600%2Cc_limit/2244914056" alt="Jamie Campbell Bower">
+                <div class="actor-name">Jamie Campbell Bower as "Henry Creel / Vecna"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://media.gettyimages.com/id/2245442631/photo/los-angeles-premiere-of-netflixs-stranger-things-season-5-arrivals.jpg?s=594x594&w=gi&k=20&c=fABVaKLvAUHAL9fhNAWcU8jGOpKRMEYqEbbl08FNvAw=" alt="Robert Englund">
+                <div class="actor-name">Nell Fisher as "Holly Wheeler"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://assets.teenvogue.com/photos/6924d9818079111b15bd69d5/16:9/w_3328,h_1872,c_limit/DSC_0560_3o10aeqb.JPG" alt="Jake Connelly">
+                <div class="actor-name">Jake Connelly as "Derek Turnbow"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://hips.hearstapps.com/hmg-prod/images/matthew-modine-65fd3dd183358.jpg?resize=980:*" alt="Alec Utgoff">
+                <div class="actor-name">Mathew modine as "DR.Brenner"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://nypost.com/wp-content/uploads/sites/2/2025/10/joseph-quinn-attends-royal-film-113906752.jpg?w=683" alt="Joseph Quinn">
+              
+                <div class="actor-name">Joseph Quinn as "Eddie Munson"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://ca-times.brightspotcdn.com/dims4/default/228f64f/2147483647/strip/false/crop/2513x3500+0+0/resize/1067x1486!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fb3%2F36%2F9e24d4db47cd843a7e9005096d92%2Fny-premiere-of-stranger-things-season-4-81953.jpg" alt="Eduardo Franco">
+                <div class="actor-name">Eduardo Franco as "Argyle"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://s.yimg.com/ny/api/res/1.2/NCKEJeXZ2OrqoWA0A3vAlw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyNDI7aD0xODYzO2NmPXdlYnA-/https://media.zenfs.com/en/us_magazine_896/cba1791cc8352a426fe8e2142420429a" alt="Petey Dunne">
+                <div class="actor-name">sean austin as "Bob Newby"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="https://deadline.com/wp-content/uploads/2025/11/P102ZJTI.jpg?w=800" alt="Olivia Burnette">
+                <div class="actor-name">Priah Fergunson as "Erica Sinclair"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Matthew_Senna" alt="Matthew Senna">
+                <div class="actor-name">Matthew Senna as "High Schooler"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_1" alt="Robin Buckley">
+                <div class="actor-name">Additional Stranger Things Actor as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_2" alt="Additional Actor">
+                <div class="actor-name">Another Actor as "Another Character"</div>
+            </div>
+
+            <!-- 12 Extra Placeholder Actors -->
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_3" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 3 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_4" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 4 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_5" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 5 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_6" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 6 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_7" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 7 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_8" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 8 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_9" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 9 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_10" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 10 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_11" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 11 as "Character Name"</div>
+            </div>
+
+            <div class="actor-card">
+                <img class="actor-img" src="IMAGE_URL_FOR_Additional_Actor_12" alt="Additional Actor">
+                <div class="actor-name">Additional Actor 12 as "Character Name"</div>
+            </div>
+
         </div>
 
         <div class="spacer"></div>
