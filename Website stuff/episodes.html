@@ -1,223 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Episodes</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seasons</title>
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Cinzel', serif;
-            color: white;
-            background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            position: relative;
-        }
+<style>
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    color: white;
+    background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
 
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.4);
-            z-index: 0;
-            pointer-events: none;
-        }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
 
-        h1 {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            margin-top: 100px;
-            font-size: 72px;
-            color: white;
-            text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
-            animation: glowFlicker 2.5s infinite;
-        }
 
-        @keyframes glowFlicker {
-            0%, 19%, 21%, 50%, 52%, 100% { 
-                text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
-            }
-            20%, 51% { 
-                text-shadow: 0 0 12px red, 0 0 20px darkred, 0 0 28px red, 0 0 36px darkred;
-            }
-        }
+h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 72px;
+    color: white;
+    text-shadow: 0 0 6px red, 0 0 12px red, 0 0 18px darkred, 0 0 24px darkred;
+    animation: glowFlicker 2.5s infinite;
+}
 
-        .content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 50px auto;
-            font-size: 22px;
-            line-height: 1.6;
-            text-align: center;
-            text-shadow: 0 0 4px red, 0 0 8px darkred;
-        }
+@keyframes glowFlicker {
+    0%, 19%, 21%, 50%, 52%, 100% { 
+        text-shadow: 0 0 6px red, 0 0 12px red, 0 0 18px darkred, 0 0 24px darkred;
+    }
+    20%, 51% { 
+        text-shadow: 0 0 12px red, 0 0 24px darkred, 0 0 36px red, 0 0 48px darkred;
+    }
+}
 
-        .episode-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
-        }
 
-        .episode-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3);
-            padding: 15px;
-            border-radius: 10px;
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+.content-container {
+    position: relative;
+    z-index: 1;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    box-shadow: 0 0 20px red;
+}
+.season-card {
+    background: rgba(0,0,0,0.5);
+    margin: 20px;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
 
-        .episode-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 20px white, 0 0 40px white;
-        }
+.season-card h2 {
+    font-size: 28px;
+    color: white;
+    text-shadow: 0 0 4px red, 0 0 8px darkred;
+    margin-bottom: 10px;
+}
 
-        .episode-title {
-            font-size: 18px;
-            margin-bottom: 10px;
-            text-shadow: 0 0 4px red, 0 0 8px darkred;
-        }
+.season-card p {
+    font-size: 18px;
+    color: #eee;
+    text-shadow: 0 0 2px red, 0 0 4px darkred;
+}
 
-        .episode-desc {
-            font-size: 14px;
-            text-shadow: 0 0 3px red;
-        }
+/* Back to Home link */
+.back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 4px red, 0 0 8px darkred;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
 
-        h2 {
-            text-align: center;
-            margin-top: 50px;
-            text-shadow: 0 0 8px red;
-        }
+.back-home:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 8px red, 0 0 16px darkred;
+}
 
-        @media screen and (max-width: 600px) {
-            .episode-card {
-                width: 200px;
-            }
-            h1 {
-                font-size: 48px;
-            }
-        }
-
-        .spacer {
-            height: 100px;
-        }
-    </style>
+@media screen and (max-width: 768px) {
+    .season-card { margin: 15px; padding: 10px; }
+    .season-card h2 { font-size: 22px; }
+    .season-card p { font-size: 16px; }
+    h1 { font-size: 48px; }
+}
+</style>
 </head>
 <body>
 
-<h1>Episodes</h1>
+<a href="http://127.0.0.1:3000/Website stuff/info.html?serverWindowId=62a41bf0-9330-47e0-a4c4-0c2df22b3394" class="back-home">← Back to Home</a>
 
-<div class="content">
+<h1>Seasons</h1>
 
-    <!-- SEASON 1 -->
-    <h2>Season 1</h2>
-    <div class="episode-container">
-        <div class="episode-card"><div class="episode-title">E1: The Vanishing of Will Byers</div></div>
-        <div class="episode-card"><div class="episode-title">E2: The Weirdo on Maple Street</div></div>
-        <div class="episode-card"><div class="episode-title">E3: Holly, Jolly</div></div>
-        <div class="episode-card"><div class="episode-title">E4: The Body</div></div>
-        <div class="episode-card"><div class="episode-title">E5: The Flea and the Acrobat</div></div>
-        <div class="episode-card"><div class="episode-title">E6: The Monster</div></div>
-        <div class="episode-card"><div class="episode-title">E7: The Bathtub</div></div>
-        <div class="episode-card"><div class="episode-title">E8: The Upside Down</div></div>
+<div class="content-container">
+
+    <div class="season-card">
+        <h2>Season 1</h2>
+        <p>Set in the 1980s, a young boy disappears in Hawkins, Indiana. His friends discover a girl with supernatural powers and uncover the existence of a secretive government lab experimenting on a parallel dimension called the Upside Down.</p>
     </div>
 
-    <!-- SEASON 2 -->
-    <h2>Season 2</h2>
-    <div class="episode-container">
-        <div class="episode-card"><div class="episode-title">E1: MADMAX</div></div>
-        <div class="episode-card"><div class="episode-title">E2: Trick or Treat, Freak</div></div>
-        <div class="episode-card"><div class="episode-title">E3: The Pollywog</div></div>
-        <div class="episode-card"><div class="episode-title">E4: Will the Wise</div></div>
-        <div class="episode-card"><div class="episode-title">E5: Dig Dug</div></div>
-        <div class="episode-card"><div class="episode-title">E6: The Spy</div></div>
-        <div class="episode-card"><div class="episode-title">E7: The Lost Sister</div></div>
-        <div class="episode-card"><div class="episode-title">E8: The Mind Flayer</div></div>
-        <div class="episode-card"><div class="episode-title">E9: The Gate</div></div>
+    <div class="season-card">
+        <h2>Season 2</h2>
+        <p>A year after Will's rescue, the town faces a new threat from the Upside Down. Eleven discovers her past and abilities while friends band together to stop a deadly creature known as the Mind Flayer from taking over Hawkins.</p>
     </div>
 
-    <!-- SEASON 3 -->
-    <h2>Season 3</h2>
-    <div class="episode-container">
-        <div class="episode-card"><div class="episode-title">E1: Suzie, Do You Copy?</div></div>
-        <div class="episode-card"><div class="episode-title">E2: The Mall Rats</div></div>
-        <div class="episode-card"><div class="episode-title">E3: The Case of the Missing Lifeguard</div></div>
-        <div class="episode-card"><div class="episode-title">E4: The Sauna Test</div></div>
-        <div class="episode-card"><div class="episode-title">E5: The Flayed</div></div>
-        <div class="episode-card"><div class="episode-title">E6: E Pluribus Unum</div></div>
-        <div class="episode-card"><div class="episode-title">E7: The Bite</div></div>
-        <div class="episode-card"><div class="episode-title">E8: The Battle of Starcourt</div></div>
+    <div class="season-card">
+        <h2>Season 3</h2>
+        <p>The summer of 1985 brings new enemies and a mall. Strange events continue as the Mind Flayer returns stronger, targeting the group. New relationships and betrayals develop as the town fights for survival.</p>
     </div>
 
-    <!-- SEASON 4 -->
-    <h2>Season 4</h2>
-    <div class="episode-container">
-        <div class="episode-card"><div class="episode-title">E1: The Hellfire Club</div></div>
-        <div class="episode-card"><div class="episode-title">E2: Vecna’s Curse</div></div>
-        <div class="episode-card"><div class="episode-title">E3: The Monster and the Superhero</div></div>
-        <div class="episode-card"><div class="episode-title">E4: Dear Billy</div></div>
-        <div class="episode-card"><div class="episode-title">E5: The Nina Project</div></div>
-        <div class="episode-card"><div class="episode-title">E6: The Dive</div></div>
-        <div class="episode-card"><div class="episode-title">E7: The Massacre at Hawkins Lab</div></div>
-        <div class="episode-card"><div class="episode-title">E8: Papa</div></div>
-        <div class="episode-card"><div class="episode-title">E9: The Piggyback</div></div>
+    <div class="season-card">
+        <h2>Season 4</h2>
+        <p>Several months after the events of Season 3, dark forces gather power outside Hawkins. Eleven struggles with losing her powers while friends uncover shocking secrets, leading to a confrontation with the terrifying Vecna.</p>
     </div>
 
-    <!-- SEASON 5 -->
-    <h2>Season 5</h2>
-    <div class="episode-container">
-
-        <div class="episode-card">
-            <div class="episode-title">E1: The Crawl</div>
-            <div class="episode-desc">The final chapter begins as Hawkins faces its greatest threat yet.</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E2 : The Vanishing Of Holly Wheeler</div>
-            <div class="episode-desc">After a vicious attack at the Wheeler home, Mike and Nancy confront the cost of secrecy, while El and Hopper embark on a rescue mission.</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E3: The Turnbow Trap</div>
-            <div class="episode-desc">Will gains unique insight into Vecna's next move, giving the crew an opportunity to set a trap; Holly explores her new surroundings.</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E4: Sorcerer</div>
-            <div class="episode-desc">The military tighten their grip on the town as Mike, Lucas and Robin orchestrate a daring escape; El confronts the enemy face to face.</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E5: Shock Jock</div>
-            <div class="episode-desc">Details coming soon...</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E6: Episode 6 (TBA)</div>
-            <div class="episode-desc">Details coming soon...</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E7: Episode 7 (TBA)</div>
-            <div class="episode-desc">Details coming soon...</div>
-        </div>
-        <div class="episode-card">
-            <div class="episode-title">E8: Episode 8 (TBA)</div>
-            <div class="episode-desc">Details coming soon...</div>
-        </div>
-
+    <div class="season-card">
+        <h2>Season 5</h2>
+        <p>The final season sees the heroes and villains collide in an epic battle for Hawkins and beyond. Mysteries from past seasons come to light, old enemies return, and the story reaches a climactic, emotional conclusion.</p>
     </div>
 
-    <div class="spacer"></div>
 </div>
 
 </body>

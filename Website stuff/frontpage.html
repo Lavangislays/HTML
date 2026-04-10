@@ -20,7 +20,6 @@ body {
     height: 100vh;
 }
 
-/* BACKGROUND IMAGE */
 .container img {
     width: 100%;
     height: 100%;
@@ -28,7 +27,6 @@ body {
     filter: brightness(40%) contrast(110%);
 }
 
-/* CINEMATIC VIGNETTE */
 .overlay {
     position: absolute;
     top: 0;
@@ -36,10 +34,9 @@ body {
     height: 100%;
     background: radial-gradient(circle at center, rgba(255,0,0,0.1) 50%, rgba(0,0,0,0.8) 100%);
     z-index: 1;
-    pointer-events: none; /* allows button clicks */
+    pointer-events: none;
 }
 
-/* TITLE WITH RED PULSE */
 .title {
     position: absolute;
     top: 20%;
@@ -63,7 +60,6 @@ body {
     50% { text-shadow: 0 0 30px red,0 0 60px red,0 0 80px darkred; }
 }
 
-/* ENTER BUTTON */
 .enter-btn {
     position: absolute;
     top: 60%;
@@ -78,7 +74,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
     transition: 0.3s;
-    z-index: 5; /* above fog & overlay */
+    z-index: 5;
 }
 
 .enter-btn:hover {
@@ -86,18 +82,16 @@ body {
     box-shadow: 0 0 20px red, 0 0 40px red;
 }
 
-/* FADE-IN */
 .fade-in {opacity:0; animation:fadeIn 3s forwards;}
 @keyframes fadeIn {to{opacity:1;}}
 
-/* 🌫 MULTIPLE FOG LAYERS */
 .fog {
     position: absolute;
     top: 0;
     width: 300px;
     height: 100%;
     background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 70%);
-    pointer-events: none; /* allows button clicks */
+    pointer-events: none;
     z-index: 2;
     opacity: 0.5;
 }
@@ -111,7 +105,6 @@ body {
 @keyframes driftMiddle { 0%{transform:translateX(0);} 50%{transform:translateX(50px);} 100%{transform:translateX(0);} }
 @keyframes fogPulse { 0%,100% {opacity:0.5;} 50% {opacity:0.2;} }
 
-/* ⚡ RANDOM LIGHTNING FLASH */
 .lightning {
     position:absolute;
     top:0;
@@ -120,20 +113,19 @@ body {
     height:100%;
     background:rgba(255,255,255,0);
     z-index:4;
-    pointer-events: none; /* allows button clicks */
+    pointer-events: none; 
 }
-
 </style>
 </head>
+
 <body>
 
 <div class="container">
 
-<img src="https://images.wallpapersden.com/image/download/stranger-things-hd-netflix-experience_bWlla2mUmZqaraWkpJRmbmdlrWZlbWU.jpg">
+<img src="https://4kwallpapers.com/images/wallpapers/stranger-things-2560x1080-18568.jpg">
 
 <div class="overlay"></div>
 
-<!-- MULTIPLE FOG LAYERS -->
 <div class="fog left"></div>
 <div class="fog right"></div>
 <div class="fog middle"></div>
@@ -142,7 +134,6 @@ body {
 
 <button class="enter-btn fade-in" onclick="enterSite()">Enter the Upside Down</button>
 
-<!-- LIGHTNING -->
 <div class="lightning" id="lightning"></div>
 
 </div>
@@ -151,13 +142,15 @@ body {
 function enterSite(){
     document.body.style.transition="1s";
     document.body.style.opacity="0";
-    setTimeout(()=>{window.location.href="info.html";},1000);
+    setTimeout(()=>{
+        window.location.href="http://127.0.0.1:3000/Website%20stuff/info.html?serverWindowId=62a41bf0-9330-47e0-a4c4-0c2df22b3394";
+    },1000);
 }
 
-// subtle flicker for background
-setInterval(()=>{document.body.style.backgroundColor=Math.random()>0.95?"#200":"black";},100);
+setInterval(()=>{
+    document.body.style.backgroundColor=Math.random()>0.95?"#200":"black";
+},100);
 
-// random lightning flashes
 const lightning=document.getElementById("lightning");
 setInterval(()=>{
     if(Math.random()>0.97){

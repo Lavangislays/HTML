@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>More</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Cinzel', serif; /* all text Cinzel */
+    color: white;
+    background-image: url("https://images2.alphacoders.com/125/thumb-1920-1258898.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.65);
+}
+
+/* Back to Home link */
+.back-home {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 2;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    text-shadow: 0 0 4px red, 0 0 8px darkred;
+    transition: transform 0.2s ease, text-shadow 0.2s ease;
+}
+
+.back-home:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 8px red, 0 0 16px darkred;
+}
+
+/* H1 OG flickering glow style */
+h1 {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 72px;
+    color: white;
+    text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+    animation: glowFlicker 2.5s infinite;
+}
+
+@keyframes glowFlicker {
+    0%, 19%, 21%, 50%, 52%, 100% { 
+        text-shadow: 0 0 4px red, 0 0 8px red, 0 0 12px darkred, 0 0 20px darkred;
+    }
+    20%, 51% { 
+        text-shadow: 0 0 12px red, 0 0 20px darkred, 0 0 28px red, 0 0 36px darkred;
+    }
+}
+
+/* General content container style */
+.content-container {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0,0,0,0.4);
+    border-radius: 15px;
+    line-height: 1.6;
+    font-size: 18px;
+    text-align: justify;
+    color: #eee;
+    box-shadow: 0 0 20px red;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.content-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px red, 0 0 50px darkred;
+}
+
+.content-container h2, .content-container h3, .content-container p {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    color: white;
+    text-shadow: 0 0 4px red, 0 0 8px darkred;
+    animation: glowFlicker 2.5s infinite;
+}
+
+
+@media screen and (max-width: 600px) {
+    h1 { font-size: 48px; }
+    .content-container { font-size: 16px; padding: 20px; }
+}
+</style>
+</head>
+<body>
+
+<a href="http://127.0.0.1:3000/Website stuff/info.html?serverWindowId=62a41bf0-9330-47e0-a4c4-0c2df22b3394" class="back-home">← Back to Home</a>
+
+<h1>More</h1>
+
+<div class="content-container">
+<h2>Who Made Stranger Things?</h2>
+<p>Stranger Things was created and directed by <strong>Matt and Ross Duffer</strong>, widely known as the Duffer Brothers. They are twins who grew up immersed in 1980s pop culture, including movies by Steven Spielberg and horror novels by Stephen King. Inspired by these influences, they wrote a story about a small town filled with mystery, supernatural powers, and childhood friendships.</p>
+</div>
+
+<div class="content-container">
+<h3>Who Made This Website?</h3>
+<p>This website was made by an 11-year-old girl named <strong>Lavangi Singhal</strong>. She worked hard and learned how to code  to create this Stranger Things fan site, learning and experimenting along the way!</p>
+</div>
+
+</body>
+</html>
