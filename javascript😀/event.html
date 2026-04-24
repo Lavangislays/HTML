@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>The Basment</h1>
+    <p id="story">I wanted to go find my freind, and he was hiding in the basment.</p>
+    <button onclick="goDark()">Get in the Mood</button>
+    <div class="textEntry">Type your name here, if you dare:<input type="text" id="name"></div>
+        <button onclick="typeAndScream()">Please, Please Don't Click me!</button>
+        <button onclick="finishTheStory()">Tell Me What Happen!</button>
+
+
+
+        <script>
+            function typeAndScream() {
+            var personName=document.getElementById("name").value;
+            alert("I told you not to do that " + personName);
+
+            }
+
+            function goDark() {
+                document.body.className = "dark";
+            }
+
+            function finishTheStory() {
+                document.getElementById("story").innerHTML = "So I carefully searched the damp dungeon. There you are!";
+            }
+
+
+
+        </script>
+</body>
+</html>
