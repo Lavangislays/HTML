@@ -3,119 +3,326 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Best Navbar</title>
+<title>KATSEYE | ULTIMATE EXPERIENCE</title>
 
 <style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:Arial;}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+  background:black;
+  color:white;
+  overflow-x:hidden;
 }
 
-/* NAVBAR */
-.navbar {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #111;
-    padding: 15px 30px;
-    z-index: 1000;
+/* INTRO */
+#intro {
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
+  animation:fadeOut 2s 2s forwards;
 }
 
-.logo {
-    color: white;
-    font-size: 22px;
-    font-weight: bold;
+#intro h1 {
+  font-size:70px;
+  color:#ff2bd6;
+  text-shadow:0 0 30px #ff2bd6;
 }
 
-.menu {
-    display: flex;
-    gap: 25px;
+@keyframes fadeOut {
+  to {opacity:0; visibility:hidden;}
 }
 
-.menu a {
-    color: white;
-    text-decoration: none;
-    position: relative;
+/* NAV */
+nav {
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  padding:20px 40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(10px);
+  z-index:1000;
 }
 
-/* COOL UNDERLINE ANIMATION */
-.menu a::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    background: #00d4ff;
-    left: 0;
-    bottom: -5px;
-    transition: 0.3s;
+nav a {
+  margin-left:20px;
+  cursor:pointer;
 }
 
-.menu a:hover::after {
-    width: 100%;
+/* SECTIONS */
+.section {
+  padding:100px 20px;
+  text-align:center;
+  display:none;
+  opacity:0;
+  transform:translateY(20px);
+  transition:0.6s;
 }
 
-/* HAMBURGER */
-.hamburger {
-    display: none;
-    font-size: 26px;
-    color: white;
-    cursor: pointer;
+.section.active {
+  display:block;
+  opacity:1;
+  transform:translateY(0);
 }
 
-/* MOBILE */
-@media (max-width: 700px) {
-    .menu {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background: #111;
-        flex-direction: column;
-        width: 100%;
-        display: none;
-        text-align: center;
-    }
-
-    .menu.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
+/* HERO */
+.hero {
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  text-align:center;
+  background: radial-gradient(circle,#1a001f,black);
 }
 
-/* DEMO CONTENT */
-.content {
-    height: 2000px;
-    padding: 20px;
+.hero h1 {
+  font-size:80px;
+  color:#ff2bd6;
+}
+
+/* GRID */
+.grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+
+.card {
+  padding:20px;
+  background:#111;
+  border:1px solid #ff2bd6;
+  border-radius:10px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.card:hover {
+  transform:scale(1.1);
+  box-shadow:0 0 25px #ff2bd6;
+}
+
+/* MODAL */
+.modal {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:black;
+  display:none;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:9999;
+}
+
+.close {
+  margin-top:20px;
+  color:#ff2bd6;
+  cursor:pointer;
+}
+
+/* GALLERY */
+.gallery img {
+  width:200px;
+  margin:10px;
+  cursor:pointer;
+}
+
+/* COUNTDOWN */
+#countdown {
+  color:#ff2bd6;
+  font-size:25px;
+  margin-top:10px;
+}
+
+/* TRACKLIST */
+.track {
+  padding:10px;
+  border-bottom:1px solid #ff2bd6;
+  cursor:pointer;
+}
+
+/* COMMENTS */
+.comment {
+  margin-top:10px;
+  border-bottom:1px solid #333;
+}
+
+/* PARTICLES */
+canvas {
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
 }
 </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">MySite</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="menu" id="menu">
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Gallery</a>
-        <a href="#">Contact</a>
-    </div>
+<!-- INTRO -->
+<div id="intro">
+  <h1>KATSEYE</h1>
+  <p>ULTIMATE ERA</p>
 </div>
 
-<div class="content">
-    Scroll to test sticky + responsive navbar.
+<canvas id="bg"></canvas>
+
+<!-- NAV -->
+<nav>
+  <h2 style="color:#ff2bd6;">KATSEYE</h2>
+  <div>
+    <a onclick="show('home')">Home</a>
+    <a onclick="show('members')">Members</a>
+    <a onclick="show('gallery')">Concept</a>
+    <a onclick="show('music')">Music</a>
+    <a onclick="show('secret')">Leak</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<section id="home" class="section active">
+  <div class="hero">
+    <h1>KATSEYE</h1>
+    <p>GLOBAL POP ERA</p>
+    <div id="countdown"></div>
+    <button onclick="toggleMusic()">Music</button>
+  </div>
+</section>
+
+<!-- MEMBERS -->
+<section id="members" class="section">
+  <h2>Members</h2>
+  <div class="grid">
+    <div class="card" onclick="openModal('Sophia','Leader, vocals')">Sophia</div>
+    <div class="card" onclick="openModal('Manon','Artist vibe')">Manon</div>
+    <div class="card" onclick="openModal('Daniela','Dancer')">Daniela</div>
+    <div class="card" onclick="openModal('Lara','Vocalist')">Lara</div>
+    <div class="card" onclick="openModal('Megan','All-rounder')">Megan</div>
+    <div class="card" onclick="openModal('Yoonchae','Maknae')">Yoonchae</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="section">
+  <h2>Concept</h2>
+  <div class="gallery">
+    <img src="https://picsum.photos/200/300?1">
+    <img src="https://picsum.photos/200/300?2">
+    <img src="https://picsum.photos/200/300?3">
+  </div>
+</section>
+
+<!-- MUSIC -->
+<section id="music" class="section">
+  <h2>Tracklist</h2>
+  <div class="track">01 INTRO</div>
+  <div class="track">02 NEON DREAM</div>
+  <div class="track">03 GLASS HEART</div>
+
+  <iframe width="80%" height="300" src="https://www.youtube.com/embed/dQw4w9WgXcQ"></iframe>
+</section>
+
+<!-- SECRET MODE -->
+<section id="secret" class="section">
+  <h2>LEAK FILES</h2>
+  <p>unauthorized content detected</p>
+
+  <div class="track">SYSTEM OVERRIDE</div>
+  <div class="track">FINAL ERA</div>
+
+  <div>
+    <input id="cInput">
+    <button onclick="add()">POST</button>
+    <div id="comments"></div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <h2 id="mName"></h2>
+  <p id="mInfo"></p>
+  <div class="close" onclick="closeModal()">CLOSE</div>
 </div>
+
+<audio id="music" loop>
+  <source src="">
+</audio>
 
 <script>
-function toggleMenu() {
-    document.getElementById("menu").classList.toggle("active");
+function show(id){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
 }
-</script><s
+
+/* MODAL */
+function openModal(n,i){
+  document.getElementById('modal').style.display='flex';
+  document.getElementById('mName').innerText=n;
+  document.getElementById('mInfo').innerText=i;
+}
+function closeModal(){
+  document.getElementById('modal').style.display='none';
+}
+
+/* MUSIC */
+let play=false;
+function toggleMusic(){
+  let m=document.getElementById('music');
+  if(!play){m.play();play=true;}
+  else{m.pause();play=false;}
+}
+
+/* COMMENTS */
+function add(){
+  let v=document.getElementById('cInput').value;
+  let d=document.createElement('div');
+  d.className='comment';
+  d.innerText=v;
+  document.getElementById('comments').appendChild(d);
+}
+
+/* COUNTDOWN */
+let t=new Date("2026-12-31").getTime();
+setInterval(()=>{
+ let n=new Date().getTime();
+ let d=Math.floor((t-n)/(1000*60*60*24));
+ document.getElementById("countdown").innerText=d+" DAYS";
+},1000);
+
+/* PARTICLES */
+const c=document.getElementById("bg");
+const x=c.getContext("2d");
+c.width=window.innerWidth;
+c.height=window.innerHeight;
+
+let p=[];
+for(let i=0;i<100;i++){
+p.push({x:Math.random()*c.width,y:Math.random()*c.height,dx:(Math.random()-0.5),dy:(Math.random()-0.5)});
+}
+
+function a(){
+x.clearRect(0,0,c.width,c.height);
+x.fillStyle="#ff2bd6";
+p.forEach(i=>{
+x.beginPath();
+x.arc(i.x,i.y,2,0,Math.PI*2);
+x.fill();
+i.x+=i.dx;i.y+=i.dy;
+});
+requestAnimationFrame(a);
+}
+a();
+</script>
 
 </body>
 </html>

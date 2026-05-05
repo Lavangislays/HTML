@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lara Raj | KATSEYE Era</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    background: radial-gradient(circle, #ff00ff, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 70px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px #ff00ff;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* BUTTON */
+.btn {
+    margin-top: 20px;
+    padding: 12px 30px;
+    border: 2px solid #ff00ff;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ff00ff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* SECTION */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    padding: 20px;
+    background: #111;
+    border: 1px solid #ff00ff;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* GLOW TEXT */
+.glow {
+    color: #ff00ff;
+    text-shadow: 0 0 10px #ff00ff;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #050505;
+    font-size: 14px;
+}
+
+/* SCROLL EFFECT */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s;
+}
+
+.fade.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+    <h1>LARA RAJ</h1>
+    <p>Enter the KATSEYE Era</p>
+    <button class="btn" onclick="scrollDown()">ENTER</button>
+</section>
+
+<section class="section fade">
+    <h2 class="glow">ABOUT</h2>
+    <p>Lara Raj is bold, electric, and unstoppable. A rising icon in a neon-lit world.</p>
+</section>
+
+<section class="section fade">
+    <h2 class="glow">ERA HIGHLIGHTS</h2>
+    <div class="cards">
+        <div class="card">⚡ Debut Drop</div>
+        <div class="card">💿 Visual Era</div>
+        <div class="card">🔥 Global Rise</div>
+    </div>
+</section>
+
+<section class="section fade">
+    <h2 class="glow">JOIN THE MOVEMENT</h2>
+    <button class="btn">FOLLOW NOW</button>
+</section>
+
+<footer>
+    <p>© 2026 Lara Raj | KATSEYE Era</p>
+</footer>
+
+<script>
+function scrollDown() {
+    document.querySelectorAll('.section')[0].scrollIntoView({behavior: 'smooth'});
+}
+
+// Fade animation on scroll
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+    faders.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+            el.classList.add('show');
+        }
+    });
+});
+</script>
+
+</body>
+</html>

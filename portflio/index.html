@@ -4,6 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #hero {
+        position: relative;
+        overflow: hidden;
+        height: 70vh;
+    }
+
+    .slider {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all 1s ease-in-out;
+    }
+
+    .slide.active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .slide.prev {
+        transform: translateX(-100%);
+    }
+
+    .content {
+        position: relative;
+        z-index: 2;
+    }
+    </style>
 </head>
 <body>
     
@@ -22,9 +62,14 @@
    </div>
 </nav>
 
-<header class="hero text-white text center d-flex align-items-center" id="hero">
-    <div class="container py-5">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Lara_Raj_240913_1.jpg/250px-Lara_Raj_240913_1.jpg" class="pfp mb-3" alt="My Avatar">
+<header class="hero text-white text-center d-flex align-items-center" id="hero">
+    <div class="slider">
+        <div class="slide active" style="background-image: url('https://cdn.polyspeak.ai/speakmaster/poly-sdispatcher/superresolution/images/20250420/3471a753-93cb-4690-826c-c112c72bae32.webp');"></div>
+        <div class="slide" style="background-image: url('https://preview.redd.it/lara-raj-there-is-something-about-her-face-in-motion-that-v0-hhdilphq3d3g1.jpg?width=640&crop=smart&auto=webp&s=82c1eb30f7973cb864370f2f72af804cdae9819d');"></div>
+        <div class="slide" style="background-image: url('https://www.dissdash.com/wp-content/uploads/2023/09/%E2%80%8Elr.%E2%80%8E001.jpeg');"></div>
+    </div>
+
+    <div class="container py-5 content">
         <h1 class="display-5 fw-bold"> Hi! I'm <span id="myName">A student</span></h1>
         <p class="lead">I love learning, building, and creating fun projects</p>
     </div>
@@ -54,7 +99,29 @@
     <p class="mb-0">Made with love| Codingal where kids fall in lovw with AI & coding</p>
 
 </footer>
+    <script>
+    
+    let slides = document.querySelectorAll(".slide");
+    let current = 0;
 
+    function changeSlide() {
+        // remove classes from ALL slides first
+        slides.forEach(slide => {
+            slide.classList.remove("active", "prev");
+        });
+
+        // set previous slide
+        let prev = current;
+
+        // move to next
+        current = (current + 1) % slides.length;
+
+        slides[prev].classList.add("prev");
+        slides[current].classList.add("active");
+    }
+
+    setInterval(changeSlide, 4000);
+    </script>
 
 </body>
 </html>
