@@ -1,0 +1,1 @@
+# if students got more than 75 in all 3, will meet president else not.

@@ -1,0 +1,1 @@
+# students who got >=75 in ela, eligible for speech writing for president
