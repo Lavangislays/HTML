@@ -1,0 +1,13 @@
+name_list = []
+for i in range(3):
+    name = input("Enter your name")
+    name_list.append(name)
+    
+length = len(name_list)
+print(length)
+
+print(name_list[0])
+print(name_list[1])
+
+for i in range(length) :
+    print(f"Name {i+1}: {name_list[i]}") 
