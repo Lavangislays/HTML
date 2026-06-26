@@ -1,0 +1,1 @@
+  #homwork searching indexing in pyton and prctice code from google
