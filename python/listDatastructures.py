@@ -1,6 +1,6 @@
 lavangi_list = []
 
-print(f"lavangi list: { lavangi_list}")
+print(f"lavangi list: {lavangi_list}")
 
 lavangi_list.append("Bread")
 
